@@ -10,7 +10,7 @@ services:
     env_file:
       - nc_db.env
 
-  nextcloud_app:
+  app:
     image: nextcloud:apache
     restart: always
     volumes:
@@ -56,6 +56,8 @@ services:
     image: collabora/code
     expose:
       - 9980
+    environment:
+      - domain=nextcloud.sygnetzki.de      
     env_file:
       - collabora.env
     ports:
