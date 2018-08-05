@@ -6,7 +6,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      -  postgres_database:/var/lib/postgresql/data
+      -  db:/var/lib/postgresql/data
     env_file:
       - nc_db.env
 
@@ -67,7 +67,7 @@ services:
       - proxy-tier
 
 volumes:
-  postgres_database:
+  db:
   nextcloud:
   certs:
   vhost.d:
