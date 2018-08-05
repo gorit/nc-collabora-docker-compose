@@ -2,15 +2,15 @@
 version: '3'
 
 services:
-  db:
+  postgres_db:
     image: postgres
     restart: always
     volumes:
-      -  db:/var/lib/postgresql/data
+      -  postgres_db:/var/lib/postgresql/data
     env_file:
       - nc_db.env
 
-  app:
+  nextcloud_app:
     image: nextcloud:apache
     restart: always
     volumes:
@@ -18,7 +18,7 @@ services:
     env_file:
       - nc_db.env
     depends_on:
-      - db
+      - postgres_db
     networks:
       - proxy-tier
       - default
@@ -69,7 +69,7 @@ services:
       - proxy-tier
 
 volumes:
-  db:
+  postgres_db:
   nextcloud:
   certs:
   vhost.d:
