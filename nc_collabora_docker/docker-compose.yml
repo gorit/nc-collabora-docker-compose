@@ -6,7 +6,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      - db:/var/lib/postgresql/data
+      -  postgres_database:/var/lib/postgresql/data
     env_file:
       - nc_db.env
 
