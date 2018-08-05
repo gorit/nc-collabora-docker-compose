@@ -67,7 +67,7 @@ services:
       - proxy-tier
 
 volumes:
-  db:
+  postgres_database:
   nextcloud:
   certs:
   vhost.d:
