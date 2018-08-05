@@ -55,9 +55,7 @@ services:
   collabora-code:
     image: collabora/code
     expose:
-      - 9980
-    environment:
-      - domain=nextcloud.sygnetzki.de      
+      - 9980   
     env_file:
       - collabora.env
     ports:
