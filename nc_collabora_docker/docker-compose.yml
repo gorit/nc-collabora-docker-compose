@@ -2,7 +2,7 @@
 version: '3'
 
 services:
-  postgres_database:
+  db:
     image: postgres
     restart: always
     volumes:
@@ -18,7 +18,7 @@ services:
     env_file:
       - nc_db.env
     depends_on:
-      - postgres_database
+      - db
     networks:
       - proxy-tier
       - default
